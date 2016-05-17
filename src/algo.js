@@ -60,12 +60,16 @@ function scheduleEvents (events) {
   // sort events with finishing first first
   events.sort(isFinishFirst);
 
+  console.log(events);
   // add first event
   selectedEvents.push(0);
 
   for (var i = 1; i < events.length; i++) {
-    var previousEvent = selectedEvents[selectedEvents.length - 1];
+    var previousEventIndex = selectedEvents[selectedEvents.length - 1];
+    var previousEvent = events[previousEventIndex];
     // is there a collision with previous event
+    console.log("prev", previousEvent);
+    console.log(events[i]);
     if (isStartFirst(previousEvent, events[i])) {
       selectedEvents.push(i);
     }
@@ -75,17 +79,11 @@ function scheduleEvents (events) {
 }
 
 function isFinishFirst(event1, event2) {
-  var finishHourEarlier = event1.finishHour < event2.finishHour;
-  var finishHourEqual = event1.finishHour === event2.finishHour;
-  var finishMinuteEarlier = event1.finishMinute < event2.finishMinute;
-  return !(finishHourEarlier || (finishHourEqual && finishMinuteEarlier));
+  return !(event1.finish <= event2.finish);
 }
 
 function isStartFirst(event1, event2) {
-  var startHourEarlier = event1.startHour < event2.startHour;
-  var startHourEqual = event1.startHour === event2.startHour;
-  var startMinuteEarlier = event1.startMinute < event2.startMinute;
-  return !(startHourEarlier || (startHourEqual && startMinuteEarlier));
+  return event1.finish <= event2.start;
 }
 
 /**
@@ -98,5 +96,5 @@ function isStartFirst(event1, event2) {
  * (item-index, percentage). The array should be sorted ascending by item-index.
  */
 
-function naiveRucksack (_events) {
+function naiveRucksack (capactiy, items) {
 }
