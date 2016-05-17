@@ -139,8 +139,8 @@ describe('naiveRucksack', function(){
       ]
       expect(naiveRucksack(capacity, rucksack)).to.eql(
         [
+          [0, 100],
           [1, 50],
-          [2, 100],
         ]
       );
     });
@@ -161,7 +161,7 @@ describe('naiveRucksack', function(){
           [0, 100],
           [1, 100],
           [2, 100],
-          [4, 100],
+          [3, 100],
         ]
       );
     });
@@ -180,9 +180,9 @@ describe('naiveRucksack', function(){
       expect(naiveRucksack(capacity, rucksack)).to.eql(
         [
           [0, 100],
-          [3, 100],
-          [4, 100],
-          [6,  34],
+          [1, 100],
+          [2, 100],
+          [3,  33],
         ]
       );
     });
@@ -199,8 +199,8 @@ describe('naiveRucksack', function(){
       ]
       expect(naiveRucksack(capacity, rucksack)).to.eql(
         [
-          [1, 100],
-          [3, 34]
+          [0, 100],
+          [1, 33]
         ]
       );
     });
@@ -217,8 +217,10 @@ describe('naiveRucksack', function(){
       ]
       expect(naiveRucksack(capacity, rucksack)).to.eql(
         [
+          [0, 100],
+          [1, 100],
           [2, 100],
-          [3, 100],
+          [3, 46],
         ]
       );
     });
