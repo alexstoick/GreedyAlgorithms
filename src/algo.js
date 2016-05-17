@@ -96,9 +96,20 @@ function isStartFirst(event1, event2) {
  * (item-index, percentage). The array should be sorted ascending by item-index.
  */
 
-function naiveRucksack (capactiy, items) {
-
-  items.sort(function (a, b) { return a[1]/a[0] - b[1]/b[2]})
+function naiveRucksack (capacity, items) {
+  var solution = []
+  items.sort(function (a, b) {
+    return (a[1]*1.0/a[0] < b[1]*1.0/b[0])
+  });
   console.log(items);
-  return [];
+  for(var i =0; i < items.length && capacity > 0; ++i) {
+    if ( capacity > items[i][0] ) {
+      capacity = capacity - items[i][0];
+      solution.push([i, 100]);
+    } else {
+      solution.push([i, parseInt(capacity/items[i][0]*100)]);
+      capacity = 0;
+    }
+  }
+  return solution;
 }
