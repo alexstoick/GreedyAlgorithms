@@ -97,4 +97,8 @@ function isStartFirst(event1, event2) {
  */
 
 function naiveRucksack (capactiy, items) {
+
+  items.sort(function (a, b) { return a[1]/a[0] - b[1]/b[2]})
+  console.log(items);
+  return [];
 }
