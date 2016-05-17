@@ -66,7 +66,7 @@ describe('scheduleEvents', function(){
         parseArray([15,  0, 18,  0 ]),
         parseArray([18,  0, 20, 45 ]),
       ]
-      expect(scheduleEvents(events)).to.eql([1,3,4])
+      expect(scheduleEvents(events)).to.eql([0,2,4])
     });
   });
 
@@ -79,7 +79,7 @@ describe('scheduleEvents', function(){
         parseArray([18,  0, 20, 45 ]),
         parseArray([12, 30, 16, 30 ]),
       ]
-      expect(scheduleEvents(events)).to.eql([1,3,4])
+      expect(scheduleEvents(events)).to.eql([0,3,4])
     });
   });
 
@@ -94,12 +94,12 @@ describe('scheduleEvents', function(){
         parseArray([18,  0, 20, 45 ]),
         parseArray([12, 30, 16, 30 ]),
       ]
-      expect(scheduleEvents(events)).to.eql([0,2,4])
+      expect(scheduleEvents(events)).to.eql([0,2,5])
     });
   });
 
   context('Test Case 4', function(){
-    it('it returns the correct events', function(){
+    it('it returns the correct events, but not the best choice!', function(){
       var events = [
         parseArray([10,  0, 11, 30 ]),
         parseArray([17,  0, 20, 30 ]),
@@ -108,11 +108,11 @@ describe('scheduleEvents', function(){
         parseArray([19,  3, 19, 20 ]),
         parseArray([10,  0, 13,  0 ]),
       ]
-      expect(scheduleEvents(events)).to.eql([0,2,4,5])
+      expect(scheduleEvents(events)).to.eql([0,2,4])
     });
   });
 
-  context('Test Case 4', function(){
+  context('Test Case 5', function(){
     it('it returns the correct events', function(){
       var events = [
         parseArray([10,  0, 11, 30 ]),
@@ -122,7 +122,7 @@ describe('scheduleEvents', function(){
         parseArray([19, 10, 19, 20 ]),
         parseArray([10,  0, 13,  0 ]),
       ]
-      expect(scheduleEvents(events)).to.eql([0,1,2])
+      expect(scheduleEvents(events)).to.eql([0,2,4])
     });
   });
 });
@@ -131,96 +131,96 @@ describe('scheduleEvents', function(){
 describe('naiveRucksack', function(){
   context('Test Case 1', function(){
     it('it returns the correct items', function(){
-      capacity = 4
-      rucksack = [
+      var capacity = 4
+      var rucksack = [
         [1, 1],
         [2, 4],
         [3, 9],
       ]
-      expect(naiveRucksack(capacity, rucksack).to.eql(
+      expect(naiveRucksack(capacity, rucksack)).to.eql(
         [
           [1, 50],
           [2, 100],
         ]
-      ));
+      );
     });
   });
 
   context('Test Case 2', function(){
     it('it returns the correct items', function(){
-      capacity = 20
-      rucksack = [
+      var capacity = 20
+      var rucksack = [
         [10, 3],
         [5, 1],
         [2, 4],
         [7, 1],
         [3, 9],
       ]
-      expect(naiveRucksack(capacity, rucksack).to.eql(
+      expect(naiveRucksack(capacity, rucksack)).to.eql(
         [
           [0, 100],
           [1, 100],
           [2, 100],
           [4, 100],
         ]
-      ));
+      );
     });
   });
 
   context('Test Case 3', function(){
     it('it returns the correct items', function(){
-      capacity = 20
-      rucksack = [
+      var capacity = 20
+      var rucksack = [
         [10, 30],
         [6, 1],
         [7, 1],
         [3, 9],
         [5, 5],
       ]
-      expect(naiveRucksack(capacity, rucksack).to.eql(
+      expect(naiveRucksack(capacity, rucksack)).to.eql(
         [
           [0, 100],
           [3, 100],
           [4, 100],
           [6,  34],
         ]
-      ));
+      );
     });
   });
 
   context('Test Case 4', function(){
     it('it returns the correct items', function(){
-      capacity = 12
-      rucksack = [
+      var capacity = 12
+      var rucksack = [
         [2, 1],
         [10, 13],
         [5, 4],
         [6, 5],
       ]
-      expect(naiveRucksack(capacity, rucksack).to.eql(
+      expect(naiveRucksack(capacity, rucksack)).to.eql(
         [
           [1, 100],
           [3, 34]
         ]
-      ));
+      );
     });
   });
 
   context('Test Case 5', function(){
     it('it returns the correct items', function(){
-      capacity = 25
-      rucksack = [
+      var capacity = 25
+      var rucksack = [
         [2, 1],  //0.5
         [26, 13],//0.65
         [5, 4],  //0.8
         [6, 5],  //0.84
       ]
-      expect(naiveRucksack(capacity, rucksack).to.eql(
+      expect(naiveRucksack(capacity, rucksack)).to.eql(
         [
           [2, 100],
           [3, 100],
         ]
-      ));
+      );
     });
   });
 });
