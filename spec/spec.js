@@ -1,3 +1,5 @@
+const { coinChange, scheduleEvents, naiveRucksack } = require("../src/algo");
+
 describe('coinChange', function(){
   context('Test Case 1', function(){
     it('it returns the correct coins', function(){
