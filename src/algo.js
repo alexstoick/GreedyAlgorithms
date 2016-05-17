@@ -14,8 +14,7 @@ function coinChange (amount, coins) {
 
 /**
  *
- * @param {Array} the list of event tuples composed of (start_hour, start_minute,
- * finish_hour, finish_minute)
+ * @param {Array} the list of event tuples composed of {start, finish}
  *
  * @return {Array} array containing the indexes of the selected events, sorted
  * ascending by value

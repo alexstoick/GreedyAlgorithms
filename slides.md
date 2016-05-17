@@ -78,9 +78,9 @@ Schedule as many events as possible
 ---
 
 #### `scheduleEvents(events)`
-- param1: `events` (`Array of Arrays`) the available events represented as a tuple of (startHour, startMinute, finishHour, finishMinute)
+- param1: `events` (`Array` of `Object`s) the available events represented as a tuple of (`{start, finish}`)
 ```js
-[ [12,30,15,45], [11,50,12,40] ]
+[{ start: 12, finish: 30 }, { start: 11, finish: 50 }]
 ```
 - returns: (`Array` of `Integers`) where each integer is the index of a show from `events`
 

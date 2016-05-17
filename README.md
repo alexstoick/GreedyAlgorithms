@@ -17,15 +17,15 @@ Implement a function `coinChange(amount, coins)`
 
 2. Event Scheduling
 
-You are the owner of a theatre hall and you want to rent it out to _schedule as many events as possible_. 
+You are the owner of a theatre hall and you want to rent it out to _schedule as many events as possible_.
 
 Implement a function `scheduleEvents(events)`
-- param1: `events` (`Array of Arrays`) the available events represented as a tuple of (startHour, startMinute, finishHour, finishMinute) e.g. `[ [12,30,15,45], [11,50,12,40] ]`
+- param1: `events` (`Array` of `Object`s) the available events represented as a tuple of (`{start, finish}`) e.g. `[{ start: 12, finish: 30 }, { start: 11, finish: 50 }]`
 - returns: (`Array` of `Integers`) where each integer is the index of a show from `events`
 
 3. Naive (Fragmented) Rucksack
 
-You have a rucksack with a _maximum capacity of N (Integer) kilograms_, and you want to _fill it with the most valuable items_. You can insert full or partial items in the rucksack. 
+You have a rucksack with a _maximum capacity of N (Integer) kilograms_, and you want to _fill it with the most valuable items_. You can insert full or partial items in the rucksack.
 
 Implement a function `naiveRucksack(N, items)`
 - param1: `N` maximum weight capacity
