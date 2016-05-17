@@ -83,35 +83,35 @@ describe('scheduleEvents', function(){
       ]
       expect(scheduleEvents(events)).to.equal([0,2,4])
     });
+  });
 
-
-    context('Test Case 4', function(){
-      it('it returns the correct events', function(){
-        events = [
-          [10,  0, 11, 30 ],
-          [17,  0, 20, 30 ],
-          [17,  0, 19,  0 ],
-          [18,  0, 19,  5 ],
-          [19,  3, 19, 20 ],
-          [10,  0, 13,  0 ],
-        ]
-        expect(scheduleEvents(events)).to.equal([0,2,4,5])
-      });
+  context('Test Case 4', function(){
+    it('it returns the correct events', function(){
+      events = [
+        [10,  0, 11, 30 ],
+        [17,  0, 20, 30 ],
+        [17,  0, 19,  0 ],
+        [18,  0, 19,  5 ],
+        [19,  3, 19, 20 ],
+        [10,  0, 13,  0 ],
+      ]
+      expect(scheduleEvents(events)).to.equal([0,2,4,5])
     });
+  });
 
-    context('Test Case 4', function(){
-      it('it returns the correct events', function(){
-        events = [
-          [10,  0, 11, 30 ],
-          [17,  0, 20, 30 ],
-          [17,  0, 19,  0 ],
-          [18,  0, 19,  5 ],
-          [19, 10, 19, 20 ]
-          [10,  0, 13,  0 ],
-        ]
-        expect(scheduleEvents(events)).to.equal([0,1,2])
-      });
+  context('Test Case 4', function(){
+    it('it returns the correct events', function(){
+      events = [
+        [10,  0, 11, 30 ],
+        [17,  0, 20, 30 ],
+        [17,  0, 19,  0 ],
+        [18,  0, 19,  5 ],
+        [19, 10, 19, 20 ]
+        [10,  0, 13,  0 ],
+      ]
+      expect(scheduleEvents(events)).to.equal([0,1,2])
     });
+  });
 });
 
 
@@ -204,7 +204,6 @@ describe('naiveRucksack', function(){
       ]
       expect(naiveRucksack(capacity, rucksack).to.equal(
         [
-          [1, 54],
           [2, 100],
           [3, 100],
         ]
