@@ -1,3 +1,7 @@
+exports.coinChange = coinChange;
+exports.scheduleEvents = scheduleEvents;
+exports.naiveRucksack = naiveRucksack;
+
 /**
  * The function will use a Greedy method to solve the problem of giving
  * change.
