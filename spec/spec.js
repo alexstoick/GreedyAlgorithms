@@ -1,4 +1,7 @@
-const { coinChange, scheduleEvents, naiveRucksack } = require("../src/algo");
+var algo = require("../src/algo");
+var coinChange = algo.coinChange;
+var scheduleEvents = algo.scheduleEvents;
+var naiveRucksack = algo.naiveRucksack;
 
 describe('coinChange', function(){
   context('Test Case 1', function(){
