@@ -26,15 +26,14 @@ describe('coinChange', function(){
 
     it('it returns the correct coins efficiently', function(){
       var x = []
-      var start = performance.now()
+      var start;
+      var finish;
       for(var i=0;i<20000; ++i) { x.push(1) }
-      var finish = performance.now()
-      start = performance.now()
+      start = Date.now()
       var result = coinChange(20000, [1])
-      finish = performance.now()
-      console.log(finish-start)
+      finish = Date.now()
       expect(result).to.eql(x)
-      expect(finish-start).to.be.lessThan(0.5)
+      expect(finish-start).to.be.lessThan(50)
     });
   });
 
